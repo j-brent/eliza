@@ -57,6 +57,6 @@ jobs:
         artifacts: eliza
         prerelease: true
         commit: main
-        tag: "${{ env.SECS_SINCE_THE_EPOCH }}"
+        tag: "v0.0.1-${{ env.SECS_SINCE_THE_EPOCH }}"
 
 
