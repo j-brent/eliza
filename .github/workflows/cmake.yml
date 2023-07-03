@@ -50,13 +50,13 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: eliza-exe
-    - run: echo "SECS_SINCE_THE_EPOCH=$(date +"%s")" >> GITHUB_ENV
-    - run: echo ${{ env.SECS_SINCE_THE_EPOCH }}
+    - run: echo "SECS_SINCE_THE_EPOCH=$(date +"%s")" >> "$GITHUB_ENV"
+    - run: echo "${{ env.SECS_SINCE_THE_EPOCH }}"
     - uses: ncipollo/release-action@v1
       with:
         artifacts: eliza
         prerelease: true
         commit: main
-        tag: ${{ env.SECS_SINCE_THE_EPOCH }}
+        tag: "${{ env.SECS_SINCE_THE_EPOCH }}"
 
 
